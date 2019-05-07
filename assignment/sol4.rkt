@@ -31,3 +31,13 @@
                  (if (null? rtS) #t
                  (and (isExist (dataOf rtS) rtT) (cmp (leftChildOf rtS) rtT) (cmp (rightChildOf rtS) rtT))))])
     (and (cmp rt1 rt2) (cmp rt2 rt1))))
+
+;;testcase
+
+#|
+(check_bst '(6 (4 ()()) (7 ()())))
+(check_bst '(6(7 ()()) (8 ()())))
+(apply (lambda (v) (+ v 1)) '(7 (6 ()()) (8 ()())))
+(equals '(7 (6 ()()) (8 ()())) '(6 () (7 () (8 ()()))))
+(equals '(7 (6()()) (8 ()())) '(7 (6 ()()) (8 ()(9 () ()))))
+|#
