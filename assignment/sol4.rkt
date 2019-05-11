@@ -1,4 +1,4 @@
-;;2015004575 JunHyeok Bae
+;;2015004575 JunHyeok Bae sol4
 #lang racket
 (provide (all-defined-out))
 
@@ -7,8 +7,7 @@
 (define (rightChildOf node) (caddr node))
 
 (define (check_bst rt)
-  (if (null? rt)
-      #t
+  (if (null? rt)#t
       (letrec ([data (dataOf rt)]
             [checkL (lambda(node)
                       (if (null? node) #t
@@ -39,6 +38,7 @@
 (check_bst '(6 (4 ()()) (7 ()())))
 (check_bst '(6(7 ()()) (8 ()())))
 (apply (lambda (v) (+ v 1)) '(7 (6 ()()) (8 ()())))
+(check_bst '(8 (7 () ()) (9 () ())))
 (equals '(7 (6 ()()) (8 ()())) '(6 () (7 () (8 ()()))))
 (equals '(7 (6()()) (8 ()())) '(7 (6 ()()) (8 ()(9 () ()))))
 |#
